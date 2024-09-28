@@ -22,10 +22,11 @@ class ViewController: UIViewController {
 		setupLabel()
         setupImageConteinerView()
 		setupImageView()
-        setupView()
-        
         view.addSubview(textLabel)
         view.addSubview(imageConteinerView)
+//        view.addSubview(imageView)
+        setupView()
+        setupLayout()
 	}
 	
 	private func updateNumbers() {
@@ -37,11 +38,9 @@ class ViewController: UIViewController {
 		textLabel.text = "\(firstNumber ?? 0)"
 		textLabel.font = .systemFont(ofSize: 30, weight: .bold)
 		textLabel.textColor = .red
-		textLabel.frame = CGRect(x: 30, y: 30, width: 100, height: 50)
 	}
     
     private func setupImageConteinerView() {
-        imageConteinerView.layer.frame = CGRect(x: 30, y: 130, width: 100, height: 200)
         imageConteinerView.layer.shadowColor = UIColor.black.cgColor
         imageConteinerView.layer.shadowOffset = CGSize(width: 15, height: 15)
         imageConteinerView.layer.shadowOpacity = 1
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
     
     private func setupImageView() {
         imageView.image = UIImage(named: "raccoon")
-        imageView.frame = imageConteinerView.bounds
+//        imageView.frame = imageConteinerView.bounds
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         
@@ -64,8 +63,25 @@ class ViewController: UIViewController {
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         
-        // Добавляем подслой к кнопке
+        // Добавляем подслой
         view.layer.insertSublayer(gradient, at: 0) // Градиент на фоне кнопки
+    }
+    
+    private func setupLayout() {
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            textLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageConteinerView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 150),
+            imageConteinerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageConteinerView.heightAnchor.constraint(equalToConstant: 200),
+            imageConteinerView.widthAnchor.constraint(equalToConstant: 200),
+            imageView.leftAnchor.constraint(equalTo: imageConteinerView.leftAnchor),
+            imageView.topAnchor.constraint(equalTo: imageConteinerView.topAnchor),
+            imageView.rightAnchor.constraint(equalTo: imageConteinerView.rightAnchor),
+            imageView.bottomAnchor.constraint(equalTo: imageConteinerView.bottomAnchor)
+        ])
     }
 }
 
