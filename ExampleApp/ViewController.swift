@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 		setupImageView()
         view.addSubview(textLabel)
         view.addSubview(imageConteinerView)
-//        view.addSubview(imageView)
         setupView()
         setupLayout()
 	}
@@ -49,9 +48,9 @@ class ViewController: UIViewController {
     
     private func setupImageView() {
         imageView.image = UIImage(named: "raccoon")
-//        imageView.frame = imageConteinerView.bounds
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         
         imageConteinerView.addSubview(imageView)
     }
@@ -62,13 +61,14 @@ class ViewController: UIViewController {
         gradient.colors = [UIColor.green.cgColor, UIColor.blue.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
-        
-        // Добавляем подслой
-        view.layer.insertSublayer(gradient, at: 0) // Градиент на фоне кнопки
+
+        view.layer.insertSublayer(gradient, at: 0)
     }
     
     private func setupLayout() {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageConteinerView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             textLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
