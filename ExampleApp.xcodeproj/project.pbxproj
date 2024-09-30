@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053F320B2CAB4152007CDEE3 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F320A2CAB4152007CDEE3 /* ShadowView.swift */; };
 		069D08AF2C8E75AF0077DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D08AE2C8E75AF0077DF0B /* AppDelegate.swift */; };
 		069D08B12C8E75AF0077DF0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D08B02C8E75AF0077DF0B /* SceneDelegate.swift */; };
 		069D08B32C8E75AF0077DF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D08B22C8E75AF0077DF0B /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053F320A2CAB4152007CDEE3 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		069D08AB2C8E75AF0077DF0B /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069D08AE2C8E75AF0077DF0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		069D08B02C8E75AF0077DF0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				069D08AE2C8E75AF0077DF0B /* AppDelegate.swift */,
 				069D08B02C8E75AF0077DF0B /* SceneDelegate.swift */,
 				069D08B22C8E75AF0077DF0B /* ViewController.swift */,
+				053F320A2CAB4152007CDEE3 /* ShadowView.swift */,
 				069D08C22C8E829F0077DF0B /* Helper.swift */,
 				069D08B72C8E75B10077DF0B /* Assets.xcassets */,
 				069D08B92C8E75B10077DF0B /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				069D08AF2C8E75AF0077DF0B /* AppDelegate.swift in Sources */,
 				069D08B12C8E75AF0077DF0B /* SceneDelegate.swift in Sources */,
 				069D08C32C8E829F0077DF0B /* Helper.swift in Sources */,
+				053F320B2CAB4152007CDEE3 /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
