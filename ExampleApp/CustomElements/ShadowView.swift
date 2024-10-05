@@ -23,6 +23,7 @@ class ShadowView: UIView {
         setupView()
         setupImageView(imageName)
         setupLayout()
+        layoutSubviews()
     }
     
     @available(*, unavailable)
@@ -56,5 +57,11 @@ class ShadowView: UIView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
     }
 }

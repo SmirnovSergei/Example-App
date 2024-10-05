@@ -9,44 +9,55 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	private let helper = Helper()
 	private let textLabel = UILabel()
-    private let shadowView = ShadowView(imageName: "raccoon")
-    private let secondShadowView = ShadowView(imageName: "custom")
+    private let shadowView = ShadowView(imageName: ShadowViewType.raccon.rawValue)
+    private let secondShadowView = ShadowView(imageName: ShadowViewType.custom.rawValue)
     private let stackView = UIStackView()
 
-
+    private let helper = Helper()
+    
+    private var randomNumber: Int {
+        Int.random(in: 1...10)
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateNumbers()
 		
 		setupLabel()
-        setupView()
+        view.addGradient()
         setupStackView()
         view.addSubview(stackView)
         setupLayout()
 	}
 	
 	private func updateNumbers() {
-		helper.addNumber(Int.random(in: 1...10))
+		helper.addNumber(randomNumber)
 	}
-	
-	private func setupLabel() {
-		let firstNumber = helper.getNumbers().first
-		textLabel.text = "\(firstNumber ?? 0)"
-		textLabel.font = .systemFont(ofSize: 30, weight: .bold)
+}
+
+// MARK: - Nested types
+extension ViewController {
+    
+    enum ShadowViewType: String {
+        case raccon = "raccon"
+        case custom = "custom"
+    }
+    
+    enum Constant {
+        static let font30: CGFloat = 30
+    }
+}
+
+// MARK: - Setup View
+private extension ViewController {
+    
+    func setupLabel() {
+        let firstNumber = helper.getNumbers().first
+        textLabel.text = "\(firstNumber ?? 0)"
+        textLabel.font = .systemFont(ofSize: Constant.font30, weight: .bold)
         textLabel.textAlignment = .center
-		textLabel.textColor = .red
-	}
-
-    private func setupView() {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.green.cgColor, UIColor.blue.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-
-        view.layer.insertSublayer(gradient, at: 0)
+        textLabel.textColor = .red
     }
 
     private func setupStackView() {
@@ -60,10 +71,14 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(shadowView)
         stackView.addArrangedSubview(secondShadowView)
     }
+}
 
+// MARK: - Setup Layout
+extension ViewController {
+    
     private func setupLayout() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             // Ограничения для stackView
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -73,4 +88,3 @@ class ViewController: UIViewController {
         ])
     }
 }
-
