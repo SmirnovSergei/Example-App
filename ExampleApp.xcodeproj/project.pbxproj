@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05032DCC2CB15280008042F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05032DCB2CB15280008042F9 /* CustomButton.swift */; };
 		053F320B2CAB4152007CDEE3 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F320A2CAB4152007CDEE3 /* ShadowView.swift */; };
 		056EE92B2CADE41A009858B9 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056EE92A2CADE41A009858B9 /* UIView+Gradient.swift */; };
 		069D08AF2C8E75AF0077DF0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D08AE2C8E75AF0077DF0B /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05032DCB2CB15280008042F9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		053F320A2CAB4152007CDEE3 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		056EE92A2CADE41A009858B9 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; wrapsLines = 1; };
 		069D08AB2C8E75AF0077DF0B /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				053F320A2CAB4152007CDEE3 /* ShadowView.swift */,
+				05032DCB2CB15280008042F9 /* CustomButton.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				069D08AF2C8E75AF0077DF0B /* AppDelegate.swift in Sources */,
 				069D08B12C8E75AF0077DF0B /* SceneDelegate.swift in Sources */,
 				069D08C32C8E829F0077DF0B /* Helper.swift in Sources */,
+				05032DCC2CB15280008042F9 /* CustomButton.swift in Sources */,
 				056EE92B2CADE41A009858B9 /* UIView+Gradient.swift in Sources */,
 				053F320B2CAB4152007CDEE3 /* ShadowView.swift in Sources */,
 			);
